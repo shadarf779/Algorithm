@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bot Page</title>
+	<style>
+		/* CSS styles here */
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Bot Page</h1>
+		<div class="chat">
+			<div class="message bot">
+				<p>Hello! How can I assist you today?</p>
+			</div>
+		</div>
+		<form onsubmit="return sendMessage()">
+			<input type="text" id="input-field" name="input-field" placeholder="Type your message...">
+			<input type="submit" value="Send">
+		</form>
+	</div>
+
+	<script>
+		function sendMessage() {
+			// Get the message input field value
+			var message = document.getElementById("input-field").value;
+
+			// Create a new XMLHttpRequest object
+			var xhttp = new XMLHttpRequest();
+
+			// Set the request URL and method
+			xhttp.open("POST", "bot.php", true);
+
+			// Set the request headers
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			// Set the callback function
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					// Parse the JSON response
+					var response = JSON.parse(this.responseText);
+
+					// Get the chat messages container
+					var chatContainer = document.querySelector(".chat");
+
+					// Create a new chat message element
+					var messageElement = document.createElement("div");
+					messageElement.classList.add("message");
+
+					// Set the message text and class based on the response type
+					if (response.type == "bot") {
+						messageElement.classList.add("bot");
+						messageElement.innerHTML = "<p>" + response.message + "</p>";
+					} else {
+						messageElement.innerHTML = "<p>" + message + "</p>";
+					}
+
+					// Append the message element to the chat container
+					chatContainer.appendChild(messageElement);
+
+					// Clear the message input field
+					document.getElementById("input-field").value = "";
+				}
+			};
+
+			// Send the request with the message data
+			xhttp.send("message=" + message);
+
+			// Prevent the form from submitting
+			return false;
+		}
+	</script>
+</body>
+</html>
