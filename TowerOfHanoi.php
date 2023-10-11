@@ -1,35 +1,35 @@
 <?php 
 
 
-function tower_of_hanoi($n, &$source, &$auxiliary, &$target) {
+function tower_of_hanoi($n, &$A, &$B, &$C) {
     if ($n === 1) {
-        $disk = array_pop($source);
-        array_push($target, $disk);
-        echo "Move disk $disk from Source to Target<br>";
+        $disk = array_pop($A);
+        array_push($C, $disk);
+        echo "Move disk $disk from A to C<br>";
         return;
     }
 
-    tower_of_hanoi($n - 1, $source, $target, $auxiliary);
-    $disk = array_pop($source);
-    array_push($target, $disk);
-    echo "Move disk $disk from Source to Target<br>";
-    tower_of_hanoi($n - 1, $auxiliary, $source, $target);
+    tower_of_hanoi($n - 1, $A, $C, $B);
+    $disk = array_pop($A);
+    array_push($C, $disk);
+    echo "Move disk $disk from A to C<br>";
+    tower_of_hanoi($n - 1, $B, $A, $C);
 }
 
 // Example usage
-$source = [5, 4, 3, 2, 1];
-$auxiliary = [];
-$target = [];
+$A = [5, 4, 3, 2, 1];
+$B = [];
+$C = [];
 
-// Output the final state of source and target pegs
-echo "Source Peg: " . implode(", ", $source) . "<br>";
-echo "Target Peg: " . implode(", ", $target) . "<br>";
-$n = count($source);
-tower_of_hanoi($n, $source, $auxiliary, $target);
+// Output the final state of A and C pegs
+echo "A Peg: " . implode(", ", $A) . "<br>";
+echo "C Peg: " . implode(", ", $C) . "<br>";
+$n = count($A);
+tower_of_hanoi($n, $A, $B, $C);
 
-// Output the final state of source and target pegs
-echo "Source Peg: " . implode(", ", $source) . "<br>";
-echo "Target Peg: " . implode(", ", $target) . "<br>";
+// Output the final state of A and C pegs
+echo "A Peg: " . implode(", ", $A) . "<br>";
+echo "C Peg: " . implode(", ", $C) . "<br>";
 
 
 
