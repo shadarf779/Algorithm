@@ -12,7 +12,7 @@ function tower_of_hanoi($n, $source, $auxiliary, $target) {
 }
 
 // Example usage
-$n = 6;  // Number of disks
+$n = 5;  // Number of disks
 tower_of_hanoi($n, 'A', 'B', 'C');
 
 
