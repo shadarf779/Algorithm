@@ -15,6 +15,7 @@ function tower_of_hanoi( $count,$n, &$A, &$B, &$C) {
         echo "C Peg: " . implode(", ", $C) . "<br>";
         echo "<hr>";
         return;
+        
     }
     echo $n . "<br>";
 
