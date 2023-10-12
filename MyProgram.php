@@ -4,6 +4,7 @@
     <title>Distance Calculation</title>
 </head>
 <body>
+    <h1>Distance Calculation</h1>
     <form method="post" action="">
         <label for="meters">Meters:</label>
         <input type="number" step="0.01" name="meters" id="meters" required><br>

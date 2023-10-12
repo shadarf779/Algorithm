@@ -80,7 +80,7 @@ function highlightDuplicatedWords($text, $duplicatedWords) {
 </head>
 <body>
   <h2>Plagiarism Checker</h2>
-  <form action="check.php" method="post">
+  <form  method="post">
     <label for="text1">Text 1:</label><br>
     <textarea name="text1" id="text1" rows="4" cols="50"></textarea><br>
     <label for="text2">Text 2:</label><br>
