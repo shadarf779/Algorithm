@@ -8,7 +8,7 @@ function tower_of_hanoi( $count,$n, &$A, &$B, &$C) {
         $disk = array_pop($A);
         array_push($C, $disk);
         echo $n . "<br>";
-    echo "First one <br>";
+     echo "First one <br>";
 
         echo "A Peg: " . implode(", ", $A) . "<br>";
         echo "B Peg: " . implode(", ", $B) . "<br>";
