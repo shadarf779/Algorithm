@@ -38,7 +38,7 @@ function tower_of_hanoi( $count,$n, &$A, &$B, &$C) {
 
 
 // Example usage
-$A = [5, 4, 3, 2, 1];
+$A = [ 3, 2, 1];
 $B = [];
 $C = [];
 $count = 1;
