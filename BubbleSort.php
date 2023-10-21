@@ -1,16 +1,3 @@
-<?php 
-function mergeSort($arr,$end,$start)
-{
-    $med = ($end + $start)/2;
-    $arr1 = [];
-    $arr2 = [];
-    if($arr){
-
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +6,17 @@ function mergeSort($arr,$end,$start)
     <title>Document</title>
 </head>
 <body>
-    <?php 
+    <?php
         $arr = [34,52,80,75,7,4,2,9,12,14,3,1,16,10,0,54,8];
-        
-        mergeSort($arr,Count($arr),0);
+        for ($i=Count($arr) ; $i>0;$i--)
+        {
+            for($j=0 ; $j <$i;$j++)
+            {
+                
+
+            }
+        }
     ?>
+
 </body>
 </html>
