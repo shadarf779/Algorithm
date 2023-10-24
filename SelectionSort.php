@@ -17,21 +17,26 @@
         print_r($arr);
         echo ("<br>");
         $count=0;
+        $SWAP=0;
         for ($i=0; $i<$n-1;$i++)
         {
             $minIndex=$i;
             
             print($count++. " , ");
-
+         
             for($j=$i+1 ; $j <$n;$j++)
             {                
+                print($count++. " , ");
                 if($arr[$j]<$arr[$minIndex] ){
                     $minIndex  = $j;
+
                 }
                 
-                print($count++. " , ");
             }
-            echo("Swaped");
+            //swap the found minimum element with first element of unsorted array
+            print(" ,".$SWAP++. "SWAPED, ");
+
+
                     $temp = $arr[$i];
                     $arr[$i] = $arr[$minIndex];
                     $arr[$minIndex] = $temp;
