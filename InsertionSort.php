@@ -18,16 +18,16 @@
         echo ("<br>");
         $count=0;
         $SWAP=0;
-        for ($i=1; $i<$n-1;$i++)
+        for ($i=1; $i<=$n-1;$i++)
         {
             
             print($count++. " , ");
          
             for($j=$i ; $j > 0 ;$j--)
             {               
-            print($count++. " , ");
-
-                if($arr[$j-1]>$arr[$j]){
+                print($count++. " , ");
+                if($arr[$j-1]>$arr[$j])
+                {
                     print(" ,".$SWAP++. "SWAPED, ");
                     $temp = $arr[$j];
                     $arr[$j] = $arr[$j-1];
