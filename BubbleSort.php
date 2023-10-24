@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +9,29 @@
 <body>
     <?php
         $arr = [34,52,80,75,7,4,2,9,12,14,3,1,16,10,0,54,8];
-        for ($i=Count($arr) ; $i>0;$i--)
-        {
-            for($j=0 ; $j <$i;$j++)
-            {
-                
 
+        echo ("ARRAY SIZE IS ".Count($arr));
+        echo ("<br>");
+        echo ("In Bubble Sort we need N^2 to be Sorted" . Count($arr)*Count($arr));
+        echo ("<br>");
+        $count=0;
+        for ($i=Count($arr)-1 ; $i>0;$i--)
+        {
+            print($count++. " , ");
+
+            for($j=0 ; $j <$i;$j++)
+            {                
+                if($arr[$j]>$arr[$j+1]){
+                    $temp = $arr[$j];
+                    $arr[$j] = $arr[$j+1];
+                    $arr[$j+1] = $temp;
+                }
+                
+                print($count++. " , ");
             }
+            print("<br>");
         }
+        print_r($arr);
     ?>
 
 </body>
