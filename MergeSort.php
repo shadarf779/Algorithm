@@ -1,16 +1,39 @@
 <?php 
 function mergeSort($arr) {
     $length = count($arr);
-    
-    if ($length <= 1) {
+    $mid = (int)($length / 2);
+    $n=$length - $mid;
+    if ($length < 2) {
         return $arr;
+    }else
+    {
+        for ($i = 0;$i<$mid;$i++){
+            $left[$i]= $arr[$i];
+        }
+        for ($i = 0;$i<$n;$i++){
+            $right[$i]= $arr[$mid];
+            $mid++;
+        }
     }
     
-    // Split the array in half
-    $mid = (int)($length / 2);
-    $left = array_slice($arr, 0, $mid);
-    $right = array_slice($arr, $mid);
-    
+
+    ?>
+    <table style="width: 100%;" >
+        <tr >
+            <td style="width: 45%;">
+<?php  print_r($left);?>
+            </td>
+            <td style="width: 10%;">
+                
+            </td>
+            <td style="width: 45%;">
+<?php  print_r($right);?>
+                
+            </td>
+        </tr>
+    </table>
+<?php
+
     // Recursively sort both halves
     $left = mergeSort($left);
     $right = mergeSort($right);
@@ -45,6 +68,8 @@ function merge($left, $right) {
 
 // Example usage:
 $arr = [34,52,80,75,7,4,2,9,12,14,3,1,16,10,0,54,8];
+print_r($arr);
+echo "<br>";
 $sortedArray = mergeSort($arr);
 print_r($sortedArray);
 
