@@ -4,16 +4,28 @@ function QuikSort($arr) {
     $length = count($arr);
     $mid = (int)($length / 2);
     $n=$length - $mid;
-    $Pivot=0;
+    $Pivot=$arr[0];
+    $i=0;
+    $j=Count($arr);
     if ($length < 2) {
         return $arr;
     }else
     {
-        for ($i=1;$i < $length;$i++){
-            if($arr[$Pivot] > $arr[$i])
+        while ($i == Count($arr))
+        {
+            if($arr[$i]<$arr[$j])
             {
-                $arr[$Pivot] = $arr[$i];
-                $Pivot++;
+                $j--;
+            }else if($arr[$i]<$arr[$i+1])
+            {
+                $temp = $arr[$i+1];
+                $arr[$i+1] = $arr[$i];
+                $arr[$i] = $temp;
+            }elseif($arr[$i]>$arr[$i+1])
+            {
+                $temp = $arr[$j];
+                $arr[$j] = $arr[$i];
+                $arr[$i] = $temp;
             }
         }
     }
