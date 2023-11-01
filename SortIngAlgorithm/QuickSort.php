@@ -25,10 +25,8 @@ function partition(&$arr, $left, $right) {
             swap($arr, $i, $j);
         }
     }
-
     print_r($arr);
     echo "<hr>";
-
     swap($arr, $i + 1, $right);
     return $i + 1;
 }

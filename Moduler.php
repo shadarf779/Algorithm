@@ -11,7 +11,6 @@ function fast_moduler($x, $n, $m) {
         $result = fast_moduler($x, $n - 1, $m);
         echo ("$x * $result * $result % $m <br>");
         echo (($x * $result * $result)%$m."<hr>");
-
         return ($x * $result* $result)%$m;
     }
 }
