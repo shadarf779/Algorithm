@@ -34,7 +34,7 @@ function Binary_search($arr ,$first , $arraySize , $target){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequential Search</title>
+    <title>Bianry Search</title>
 </head>
 <body>
     <?php
@@ -44,7 +44,7 @@ function Binary_search($arr ,$first , $arraySize , $target){
         $found = false;
 
         echo "ARRAY SIZE IS " . $arraySize . "<br>";
-        echo "In Sequential Search Sort we need N to be Searched: " . $target . "<br>";
+        echo "In Bianry Search Sort we need Log N to be Searched: " . $target . "<br>";
         print_r($arr);
         echo "<br>";
 
