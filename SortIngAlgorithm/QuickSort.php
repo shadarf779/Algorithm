@@ -31,7 +31,6 @@ function QuikSort($arr) {
     }
 
    
-    return $result;
 }
 
 
