@@ -1,7 +1,31 @@
 <?php 
 
-function Binary_search($arr , $arraySize , $target){
+function Binary_search($arr ,$first , $arraySize , $target){
+    if($first>$arraySize )
+    {
+        return false;
+    }
+    $med = intdiv($arraySize+$first,2);
+    print_r ($arr);
+    echo "<br>first $first, End : $arraySize, Target : $target";
+    echo "<br>".$arr[$med]."<br>";
+    echo "$arr[$med] == $target<br>";
+    if($arr[$med] == $target){
+        return true;
+    }elseif($arr[$med] < $target)
+    {
+        echo "first";
+        return Binary_search($arr , $med+1 ,$arraySize , $target);
+
+    }elseif ($arr[$med] > $target)
+    {
+        return Binary_search($arr , $first ,$med-1 , $target);
+
+    }
+
     
+    
+
 }
 
 ?>
@@ -14,7 +38,7 @@ function Binary_search($arr , $arraySize , $target){
 </head>
 <body>
     <?php
-        $arr = [34, 52, 80, 75, 7, 4, 2, 9, 12, 14, 3, 1, 16, 10, 0, 54, 8];
+        $arr = [0 ,1 ,2 ,3 ,4 ,7 ,8, 9,10  ,12, 14,16, 34 ,52,54,75,80];
         $arraySize = count($arr);
         $target = 8;
         $found = false;
@@ -24,8 +48,8 @@ function Binary_search($arr , $arraySize , $target){
         print_r($arr);
         echo "<br>";
 
-        Binary_search($arr , $arraySize , $target);
-
+        $found = Binary_search($arr ,0, $arraySize , $target);
+        
         if ($found) {
             echo "Target Found";
         } else {
