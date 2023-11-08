@@ -13,7 +13,6 @@
         for($i=1;$i<=$n;$i*=2)
         {
             $j=$i;
-            echo($i."<hr>");
             while($j>1)
             {
                 echo($j++."<br>");
