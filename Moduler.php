@@ -25,8 +25,8 @@ function fast_moduler($x, $n, $m) {
 </head>
 <body>
     <?php
-    echo ((3** 13)%5);
-    $a = fast_moduler(3, 13, 5);
+    echo ((8** 21)%12);
+    $a = fast_moduler(8, 21, 12);
     echo "Result is $a";
     ?>
 </body>
