@@ -154,5 +154,6 @@ In this code, we have two HTML files. The first one is the result page, which di
 
 When the form is submitted, the PHP code in the result page is executed. It retrieves the values of the input fields, checks if they are numeric, and calculates their sum. If the input values are valid, the sum is displayed. Otherwise, an error message is displayed.
 
-The comments in the PHP code provide a clear and concise explanation of the code's functionality..</s>
+The comments in the PHP code provide a clear and concise explanation of the code's functionality..
+</s>
 DELIMITER-->
