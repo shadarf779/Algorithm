@@ -79,3 +79,4 @@ $c = 20;
 $n = count($weight);
 
 knapsack($n ,$weight , $price , $c);
+hached
